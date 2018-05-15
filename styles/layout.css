@@ -1,4 +1,4 @@
-* {
+﻿* {
 	padding: 0;
 	margin: 0;
 }
@@ -66,4 +66,24 @@ body{
 	border-top-width: 0;
 	padding: 2em 10%;
 	line-height: 1.8em;
+}
+
+/*index.html*/
+#slideshow{
+	width: 150px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+}
+#preview{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#frame{
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*设置元素的堆叠顺序，99代表该元素堆叠在其他元素上面*/
+	z-index: 99;
 }

@@ -3,6 +3,9 @@ function moveElement(elementID, final_x, final_y, interval){
 	if(!document.getElementById(elementID)) return false;
 	
 	var elem = document.getElementById(elementID);
+	if(elem.movement){
+		clearTimeout(elem.movement);
+	}
 	if(!elem.style.left){
 		elem.style.left = "0px";
 	}
@@ -17,23 +20,27 @@ function moveElement(elementID, final_x, final_y, interval){
 		return true;
 	}
 	if(xpos < final_x){
-		xpos++;
+		var dist = Math.ceil((final_x - xpos)/10);
+		xpos += dist;
 	}
 	if(xpos > final_x){
-		xpos--;
+		var dist = Math.ceil((xpos - final_x)/10);
+		xpos += dist;
 	}
 	if(ypos < final_y){
-		ypos++;
+		var dist = Math.ceil((final_y - ypso)/10);
+		ypos += dist;
 	}
 	if(ypos > final_y){
-		ypos--;
+		var dist = Math.ceil((ypos - final_y)/10);
+		ypos -= dist;
 	}
 	
 	elem.style.left = xpos + "px";
 	elem.style.top = ypos + "px";
 	
 	var repeat = "moveElement('" + elementID + "', " + final_x + ", " + final_y + ", " + interval + ")"; 
-	movement = setTimeout(repeat, interval);
+	elem.movement = setTimeout(repeat, interval);
 }
 
 function prepareSlideshow(){

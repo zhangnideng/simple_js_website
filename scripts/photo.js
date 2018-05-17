@@ -22,6 +22,27 @@ function showPic(whichpic){
 	return false;
 }
 
+function preparePlaceholder(){
+	if(!document.createElement) return false;
+	if(!document.createTextNode) return false;
+	if(!document.getElementById) return false;
+	if(!document.getElementById("imagegallery")) return false;
+	
+	var placeholder = document.createElement("img");
+	placeholder.setAttribute("id", "placeholder");
+	placeholder.setAttribute("src", "../images/placeholder.gif");
+	placeholder.setAttribute("alt", "my image gallery");
+	
+	var description = document.createElement("p");
+	description.setAttribute("id", "description");
+	var desctxt = document.createTextNode("Choose an image");
+	description.appendChild(desctxt);
+	
+	var gallery = document.getElementById("imagegallery");
+	insertAfter(placeholder, gallery);
+	insertAfter(description, placeholder);
+}
+
 function prepareGallery(){
 	if(!document.getElementById) return false;
 	if(!document.getElementsByTagName) return false;
@@ -37,4 +58,5 @@ function prepareGallery(){
 	}
 }
 
+addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);

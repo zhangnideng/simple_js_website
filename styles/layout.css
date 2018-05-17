@@ -87,3 +87,8 @@ body{
 	/*设置元素的堆叠顺序，99代表该元素堆叠在其他元素上面*/
 	z-index: 99;
 }
+
+/*photos.html*/
+#imagegallery li{
+	display: inline;
+}

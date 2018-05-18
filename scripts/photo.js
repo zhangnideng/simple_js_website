@@ -1,4 +1,4 @@
-function showPic(whichpic){
+﻿function showPic(whichpic){
 	if(!document.getElementById("placeholder")) return true;
 	
 	var source = whichpic.getAttribute("href");

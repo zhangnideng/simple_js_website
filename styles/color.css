@@ -82,3 +82,10 @@ tr.highlight td{
 	color: #223;
 	background-color: #cba;
 }
+
+dt{
+
+}
+dd{
+	margin-right: 3em;
+}

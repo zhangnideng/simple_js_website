@@ -92,3 +92,8 @@ body{
 #imagegallery li{
 	display: inline;
 }
+
+/*live.html*/
+td{
+	padding: .5em 3em;
+}

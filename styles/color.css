@@ -62,3 +62,13 @@ a:active{
 	color: #eef;
 	background-color: #799;
 }
+
+/*live.html*/
+th{
+	color: #edc;
+	background-color: #455;
+}
+td{
+	color: #223;
+	background-color: #eb6;
+}
